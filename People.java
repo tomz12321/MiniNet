@@ -7,12 +7,14 @@ import java.util.*;
  * @version 14/03/2018
  */
 
-public class People
+public class People extends MiniNet
 {
     // instance variables - replace the example below with your own
-    private String title;
-    private String director;
-    private int rating;
+    private String name;
+    private String age;
+    private String father;
+    private String mother;
+    private String children;
 
     /**
      * Constructor for objects of class People
@@ -20,9 +22,11 @@ public class People
     public People()
     {
         // initialise instance variables
-        title = "";
-        director = "";
-        rating = 0;
+        name = "";
+        age = "";
+        father = "";
+        mother = "";
+        children = "";
     }
 
     /**
@@ -34,83 +38,132 @@ public class People
     public void displayPeopleRecord()
     {
         //method to test displaying attributes of the movie
-        System.out.print(title + ",");
-        System.out.print(director + ",");
-        System.out.println(rating);
+        System.out.print(name + ",");
+        System.out.print(age + ",");
+        System.out.print(father + ",");
+        System.out.print(mother + ",");
+        System.out.println(children);
     }
     
         
     /**
-     * A method to return director
+     * A method to return name
      * 
      * @param
-     * @return director the movie director 
+     * @return name the people name 
      */
-    public String getDirector()
+    public String getName()
     {
-        //method to get director name
-        return director;
+        //method to get people name
+        return name;
     }
    
     
     /**
-     * A method to return rating
+     * A method to return age
      * 
      * @param
-     * @return rating the movie rating 
+     * @return age the people age 
      */
-    public int getRating()
+    public int getAge()
     {
         // method to get movie rating
-        return rating;
+        return age;
     }
             
     /**
-     * A method to return title
+     * A method to return father
      * 
      * @param  
-     * @return title the movie title
+     * @return father the people father
      */
-    public String getTitle()
+    public String getFather()
     {
-        //method to get movie title
-        return title;
+        //method to get people father
+        return father;
     }
-    
+ 
+    /**
+     * A method to return mother
+     * 
+     * @param  
+     * @return mother the people mother
+     */
+    public String getMother()
+    {
+        //method to get people mother
+        return mother;
+    }
+
+    /**
+     * A method to return children
+     * 
+     * @param  
+     * @return children the people children
+     */
+    public String getChildren()
+    {
+        //method to get people children
+        return children;
+    }     
     
     /**
-     * A method to set director
+     * A method to set name
      * 
-     * @param  movieDirector the movie director
+     * @param  peopleName the people name
      * @return 
      */
-    public void setDirector(String movieDirector)
+    public void setName(String peopleName)
     {
-        //method to set director
-        director = movieDirector;
+        //method to set name
+        name = peopleName;
     }
     
     /**
-     * A method to set rating
+     * A method to set age
      * 
-     * @param  movieRating the movie rating
+     * @param  peopleAge the people age
      * @return  
      */
-    public void setRating(int movieRating)
+    public void setAge(String peopleAge)
     {
         //method to set a movie rating
-        rating = movieRating;
+        age = peopleAge;
     }
     
     /**
-     * A method to set title
+     * A method to set father
      * 
-     * @param  movieTitle the movie title
+     * @param  peopleFather the people father
      * @return      
      */
-    public void setTitle(String movieTitle)
+    public void setFather(String peopleFather)
     {
-        //method to set title
-        title = movieTitle;
+        //method to set father
+        father = peopleFather;
+    }
+
+    /**
+     * A method to set mother
+     * 
+     * @param  peopleMother the people mother
+     * @return      
+     */
+    public void setMother(String peopleMother)
+    {
+        //method to set mother
+        mother = peopleMother;
+    }
+
+    /**
+     * A method to set children
+     * 
+     * @param  peopleChildren the people children
+     * @return      
+     */
+    public void setChildren(String peopleChildren)
+    {
+        //method to set mother
+        children = peopleChildren;
     }
 }

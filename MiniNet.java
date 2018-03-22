@@ -2,10 +2,10 @@ import java.util.*;
 import java.io.*;
 
 /**
- * Write a description of class MovieDatabase here.
+ * Write a description of class MiniNet here.
  * 
  * @author Jyhwoei Yang 
- * @version 14/03/2018
+ * @version 22/03/2018
  */
 
 public class MiniNet
@@ -13,7 +13,7 @@ public class MiniNet
     // instance variables - replace the example below with your own
     private ArrayList<People> peopleList;
 
-    /** Default Constructor of Class MovieDatabase
+    /** Default Constructor of Class MiniNet
      * 
      */
     public MiniNet()
@@ -45,9 +45,9 @@ public class MiniNet
         boolean isDeleted = false;
         for (int i = 0 ; i < getNumbersOfPeople() ; i++)
         {
-            if(getPeopleList().get(i).getTitle().equals(delPeopleName))
+            if(getPeopleList().get(i).getName().equals(delPeopleName))
             {
-                System.out.println(getPeopleList().get(i).getTitle() + " are deleted.");
+                System.out.println(getPeopleList().get(i).getName() + " are deleted.");
                 getPeopleList().remove(i);
                 isDeleted = true;
             }                        
@@ -70,12 +70,10 @@ public class MiniNet
         boolean isEdited = false;
         for (int i = 0 ; i < getNumbersOfPeople() ; i++)
         {
-            if(getMovieList().get(i).getTitle().equals(editPeopleName))
+            if(getPeopleList().get(i).getName().equals(editPeopleName))
             {
-                System.out.println(getMovieList().get(i).getTitle() + " are edited.");
+                System.out.println(getPeopleList().get(i).getName() + " are edited.");
                 getMovieList().get(i).cleanListOfActors();
-                getMovieList().get(i).setActorList(editActorList);
-                getMovieList().get(i).setRating(editRating);
                
                 isEdited = true;
             }                        
@@ -98,7 +96,7 @@ public class MiniNet
         
         for (int i = 0 ; i < getNumbersOfPeople(); i++)
         {
-            if(getPeopleList().get(i).getTitle().toLowerCase().contains(searchTitle))
+            if(getPeopleList().get(i).getName().toLowerCase().contains(searchTitle))
                 resultList.add(getPeopleList().get(i));
             
         }
