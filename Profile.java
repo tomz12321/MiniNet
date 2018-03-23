@@ -7,51 +7,48 @@ import java.util.*;
  * @version 22/03/2018
  */
 
-public class Profile
+public class Profile extends People
 {
     // instance variables - replace the example below with your own
-    private String name;
     private String image; //optionImage
     private String status; //“working at KFC”,“student at RMIT”, “freelance”,“looking for jobs”
     private String friendList;
 
     /**
-     * Constructor for objects of class People
+     * Default Constructor for objects of class Profile
      */
     public Profile()
     {
         // initialise instance variables
-        name = "";
         image = "";
         status = "";
         friendList = "";
     }
 
     /**
-     * A method to test displaying object displayPeople attibutes
+     * Constructor for objects of class Profile
+     */
+    public Profile(String name, String age, String father,String mother,String children, String image, String status, String friendList)
+    {
+        // initialise instance variables
+        super(name, age, father, mother, children);
+        this.image = image;
+        this.status = status;
+        this.friendList = friendList;
+    }
+
+    /**
+     * A method to test displaying object displayProfile attibutes
      * 
      * @param
      * @return 
      */
     public void displayProfileRecord()
     {
-        //method to test displaying attributes of the movie
-        System.out.print(name + ",");
+        //method to test displaying attributes of the profile
         System.out.print(image + ",");
         System.out.print(status + ",");
         System.out.println(friendList);
-    }
-
-    /**
-     * A method to return name
-     * 
-     * @param
-     * @return name the profile name 
-     */
-    public String getName()
-    {
-        //method to get profile name
-        return name;
     }
 
     /**
@@ -91,18 +88,6 @@ public class Profile
     }
 
     /**
-     * A method to set name
-     * 
-     * @param  profileName the profile name
-     * @return 
-     */
-    public void setName(String profileName)
-    {
-        //method to set name
-        name = profileName;
-    }
-
-    /**
      * A method to set image
      * 
      * @param  profileImage the profile image
@@ -132,7 +117,7 @@ public class Profile
      * @param
      * @return friendList the profile friendList 
      */
-    public String setFriendList(String profileFriendList)
+    public void setFriendList(String profileFriendList)
     {
         //method to set profile friendList
         friendList = profileFriendList;

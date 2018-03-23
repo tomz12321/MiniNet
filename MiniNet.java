@@ -12,6 +12,7 @@ public class MiniNet
 {
     // instance variables - replace the example below with your own
     private ArrayList<People> peopleList;
+    private Driver driver;
 
     /** Default Constructor of Class MiniNet
      * 
@@ -20,9 +21,44 @@ public class MiniNet
     {
         //initialise the variables
         peopleList = new ArrayList<People>();
+        driver = new Driver();
     }
 
-        /**
+    public static void main(String[] args)
+    {
+        //create a driver object
+        Driver newDriver = new Driver();
+        
+        //Hardcode Data
+        People people1 = new People("Bryce", "30", "Andrew", "Cassie", ",Tom,Jerry,");
+        People people2 = new People("Emma", "30", "Daniel", "Fiona", ",Tom,Jerry,");
+        People people3 = new People("Tom", "5", "Bryce", "Emma", ",Tom,Jerry,");
+        People people4 = new People("Jerry", "2", "Bryce", "Emma", ",Tom,Jerry,");
+        People people5 = new People("Andy", "30", "George", "Holly", "");
+
+        newDriver.addPeople(people1);
+        newDriver.addPeople(people2);
+        newDriver.addPeople(people3);
+        newDriver.addPeople(people4);
+        newDriver.addPeople(people5);
+        Profile profile1 = new Profile("Bryce", "30", "Andrew", "Cassie" , ",Tom,Jerry,", "Image", "working at KFC", "Andy,Bob,Charlie,David");
+        Profile profile2 = new Profile("Emma", "30", "Daniel", "Fiona" , ",Tom,Jerry,", "Image", "student at RMIT", "Andy,Bob,Charlie,David");
+        Profile profile3 = new Profile();
+        Profile profile4 = new Profile();
+        Profile profile5 = new Profile("Andy", "30", "George", "Holly", "", "Image", "student at RMIT", "Andy,Bob,Charlie,David");
+        newDriver.addProfile(profile1);
+        newDriver.addProfile(profile2);
+        newDriver.addProfile(profile3);
+        newDriver.addProfile(profile4);
+        newDriver.addProfile(profile5);
+
+        newDriver.start();
+    }
+
+
+    //Old code
+
+     /**
      * A method to add People to the list
      * 
      * @param People the People Object
@@ -43,7 +79,8 @@ public class MiniNet
     {        
         //remove()
         boolean isDeleted = false;
-        for (int i = 0 ; i < getNumbersOfPeople() ; i++)
+        //getNumbersOfPeople()
+ /*       for (int i = 0 ; i < 5  ; i++)
         {
             if(getPeopleList().get(i).getName().equals(delPeopleName))
             {
@@ -52,7 +89,7 @@ public class MiniNet
                 isDeleted = true;
             }                        
         }        
-        if (! isDeleted)
+ */       if (! isDeleted)
         {
             System.out.println(" No matched People are deleted."); 
         }
@@ -68,9 +105,10 @@ public class MiniNet
     {        
         //set()
         boolean isEdited = false;
-        for (int i = 0 ; i < getNumbersOfPeople() ; i++)
+        //getNumbersOfPeople()
+        for (int i = 0 ; i < 5  ; i++)
         {
-            if(getPeopleList().get(i).getName().equals(editPeopleName))
+/*            if(getPeopleList().get(i).getName().equals(editPeopleName))
             {
                 System.out.println(getPeopleList().get(i).getName() + " are edited.");
                 getMovieList().get(i).cleanListOfActors();
@@ -81,7 +119,7 @@ public class MiniNet
         if (! isEdited)
         {
             System.out.println(" No matched People are Edited."); 
-        }
+*/        }
     }
     
     /**
@@ -93,11 +131,11 @@ public class MiniNet
     public ArrayList<People> searchPeople(String searchTitle) //not case-sensitive source.toLowerCase().contains(target.toLowerCase())
     {
         ArrayList<People> resultList = new ArrayList<People>();
-        
-        for (int i = 0 ; i < getNumbersOfPeople(); i++)
+        //getNumbersOfPeople() .size
+        for (int i = 0 ; i < peopleList.size(); i++)
         {
-            if(getPeopleList().get(i).getName().toLowerCase().contains(searchTitle))
-                resultList.add(getPeopleList().get(i));
+            if(peopleList.get(i).getName().toLowerCase().contains(searchTitle))
+                resultList.add(peopleList.get(i));
             
         }
                 

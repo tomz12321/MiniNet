@@ -4,17 +4,17 @@ import java.util.*;
  * Design a class People
  * 
  * @author Jyh-woei Yang 
- * @version 14/03/2018
+ * @version 23/03/2018
  */
 
-public class People extends MiniNet
+public class People
 {
     // instance variables - replace the example below with your own
     private String name;
     private String age;
     private String father;
     private String mother;
-    private String children;
+    private String childrenList;
 
     /**
      * Constructor for objects of class People
@@ -26,7 +26,17 @@ public class People extends MiniNet
         age = "";
         father = "";
         mother = "";
-        children = "";
+        childrenList = "";
+    }
+
+    public People(String name, String age, String father, String mother, String childrenList)
+    {
+        // initialise instance variables
+        this.name = name;
+        this.age = age;
+        this.father = father;
+        this.mother = mother;
+        this.childrenList = childrenList;
     }
 
     /**
@@ -42,7 +52,7 @@ public class People extends MiniNet
         System.out.print(age + ",");
         System.out.print(father + ",");
         System.out.print(mother + ",");
-        System.out.println(children);
+        System.out.println(childrenList);
     }
     
         
@@ -65,7 +75,7 @@ public class People extends MiniNet
      * @param
      * @return age the people age 
      */
-    public int getAge()
+    public String getAge()
     {
         // method to get movie rating
         return age;
@@ -104,7 +114,7 @@ public class People extends MiniNet
     public String getChildren()
     {
         //method to get people children
-        return children;
+        return childrenList;
     }     
     
     /**
@@ -164,6 +174,6 @@ public class People extends MiniNet
     public void setChildren(String peopleChildren)
     {
         //method to set mother
-        children = peopleChildren;
+        childrenList = peopleChildren;
     }
 }
