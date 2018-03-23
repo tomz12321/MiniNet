@@ -100,8 +100,7 @@ public class Driver
                             System.out.println("" + peopleList.get(selectedItemNo - 1).getName() + " are selected.");
                         break;
                         case '3':
-                        //delete Movie from the list
-                        //deleteMovie();
+                        //Display the profile of the selected person
                         System.out.println("=== (3) Display the profile of the selected person ===");
 
                         //display the profile of the selected person
@@ -218,8 +217,8 @@ public class Driver
 
         peopleList.add(newPeople);        
         //outprint to testing
-        System.out.println("== Result: Adding people to the list ==");
-        newPeople.displayPeopleRecord();
+        //System.out.println("== Result: Adding people to the list ==");
+        //newPeople.displayPeopleRecord();
 
     }
 
@@ -236,8 +235,8 @@ public class Driver
         profileList.add(newProfile);
         
         //outprint to testing
-        System.out.println("== Result: Adding profile to the list ==");
-        newProfile.displayProfileRecord();
+        //System.out.println("== Result: Adding profile to the list ==");
+        //newProfile.displayProfileRecord();
 
     }
     
@@ -287,7 +286,7 @@ public class Driver
      * A method to return the size of peopleList
      * 
      * @param
-     * @return count number of Movies
+     * @return count number of People
      */
     public int getNumbersOfPeople()
     {
@@ -310,7 +309,7 @@ public class Driver
      * select all the people currently in the database on standard out.
      *
      * @param
-     * @return int count number of Movies
+     * @return int index number of select item
      */
     public int selectPerson()
     {
@@ -447,7 +446,7 @@ public class Driver
 
     /**
      * A method to delete people from the Mininet system
-     * if there are above two movies appearing on the search result
+     * if there are above two people appearing on the search result
      * provide choosing options
      * 
      * @param
@@ -455,72 +454,9 @@ public class Driver
      */
     private void deletePeople()
     {
- /*       System.out.println("Delete People :");        
-        //input
-        Scanner input = new Scanner(System.in);
-
-        //search by title
-        System.out.println("=== Search People to delete : ===");
-        System.out.println("Search People , please insert keyword of name:");
-
-        String delKeyword = input.nextLine().toLowerCase();
-
-        while (validBlank(delKeyword,"Name keyword"))
-            delKeyword = input.nextLine().toLowerCase();
-
-        ArrayList<People> delResultList = newPeopleList.searchPeople(delKeyword);
-
-        //display Movie details
-        System.out.println("Search Result");
-        for (int j = 0 ; j < delResultList.size() ; j++)
-        {
-            System.out.print( (j + 1) + ") ");
-            delResultList.get(j).displayPeopleRecord();
-        }
-
-        int size = delResultList.size();
-
-        //selection
-        if (size != 0)
-        {
-            System.out.println("Please insert which option number you would select to delete, press 0 to quit :");
-            String delPeopleSelection = input.nextLine();
-            int index = convertStringtoInt(delPeopleSelection);
-
-            if (index == 0)
-                size = 0;
-            //validDelSelection (index, delresultList.size());
-            while (validDelSelection (index, size))
-            {
-
-                delMovieSelection = input.nextLine();
-                index = convertStringtoInt(delPeopleSelection);
-                if (index == 0)
-                    size = 0;
-                while (validBlank(delMovieSelection,"Selection"))
-                {    
-                    delMovieSelection = input.nextLine();
-                    index = convertStringtoInt(delPeopleSelection);
-                    if (index == 0)
-                        size = 0;
-                }
-            }
-            System.out.println(delPeopleSelection);
-
-            String delPeopleName;
-
-            if (size != 0)
-                delPeopleName = delResultList.get(index -1).getName();
-            else
-                delPeopleName = "";
-
-            //System.out.println("Delete Movie , please insert delete title:");
-            //String delMovieName = input.nextLine();
-            newPeopleList.deletePeople(delPeopleName);
-        }
-        else
- */            System.out.println("No matched people");
-   }
+       //Remain Extensibility
+       System.out.println("Delete People : ");           
+    }
 
     /**
      * A method to edit people from the MiniNet system
@@ -532,80 +468,8 @@ public class Driver
      */
     private void editPeople()
     {
-/*        System.out.println("Edit People :");        
-        //input
-        Scanner input = new Scanner(System.in);
-
-        //search by title
-        System.out.println("=== Search People to edit : ===");
-        System.out.println("Search People , please insert keyword of Name:");
-
-        String editKeyword = input.nextLine().toLowerCase();
-
-        while (validBlank(editKeyword,"Name keyword"))
-            editKeyword = input.nextLine().toLowerCase();
-
-        ArrayList<People> editResultList = newPeopleList.searchPeople(editKeyword);
-
-        //display People details
-        System.out.println("Search Result");
-        for (int j = 0 ; j < editResultList.size() ; j++)
-        {
-            System.out.print( (j + 1) + ") ");
-            editResultList.get(j).displayPeopleRecord();
-        }
-
-        int size = editResultList.size();
-
-        //selection
-        if (size != 0)
-        {
-            System.out.println("Please insert which option number you would select to delete, press 0 to quit :");
-            String editPeopleSelection = input.nextLine();
-            int index = convertStringtoInt(editPeopleSelection);
-
-            if (index == 0)
-                size = 0;
-            //validDelSelection (index, delresultList.size());
-            while (validDelSelection (index, size))
-            {
-
-                editPeopleSelection = input.nextLine();
-                index = convertStringtoInt(editPeopleSelection);
-                if (index == 0)
-                    size = 0;
-                while (validBlank(editPeopleSelection,"Selection"))
-                {    
-                    editPeopleSelection = input.nextLine();
-                    index = convertStringtoInt(editPeopleSelection);
-                    if (index == 0)
-                        size = 0;
-                }
-            }
-            System.out.println(editPeopleSelection);
-
-            String editPeopleName;
-
-            if (size != 0)
-                editPeopleName = editResultList.get(index - 1).getName();
-            else
-                editPeopleName = "";
-
-            if (size !=0)
-            {
-                System.out.println("==== Edit People ====");
-
-                System.out.println("Please insert people age :");        
-                //input people's age
-                String newPeopleAge = input.nextLine();
-
-                while (validBlank(newPeopleAge,"people age"))
-                    newPeopleAge = input.nextLine();
-               
-            }
-        }
-        else
-*/            System.out.println("No matched people");
+        //Remain Extensibility
+        System.out.println("Edit People :");        
     }
 
     
@@ -620,14 +484,14 @@ public class Driver
     {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Press (1) To search by Movie Title or (2) To search by Movie Director");        
+        System.out.println("Press (1) To search by People Name or (2) To search by People Age");        
         String iobuffer = input.nextLine();
         char option = ' '; 
 
         while(validBlank(iobuffer.trim(),"Options"))
             iobuffer = input.nextLine();
 
-        while(validDelSelection(convertStringtoInt(iobuffer.trim()), 2))
+        while(validLimitSelection(convertStringtoInt(iobuffer.trim()), 2))
         {
             iobuffer = input.nextLine();
             //validate Option is blank
@@ -639,13 +503,11 @@ public class Driver
         switch (option)
         {
             case '1':                        
-            //search Movie from the list
-            //searchMovie();
+            //search People from the list by Name
             break;
 
             case '2':
-            //search Movie from the list by director
-            //searchByDirector();
+            //search People from the list by Age
             break;                                
         }
     }
@@ -740,8 +602,6 @@ public class Driver
         
     }
     
-    
-
     /**
      * Method to check insert any emptys or blank
      * 
@@ -779,9 +639,9 @@ public class Driver
      * @param index the index to be validated, the size the size
      * @return the boolean of checkDelSelection
      */
-    private boolean validDelSelection(int index, int size) //method to check int index
+    private boolean validLimitSelection(int index, int size) //method to check int index
     {
-        //check if rating is from 1 to size  and return false to break while loop
+        //check if rating is from 1 to size and return false to break while loop
         if (index < 0 || index > size)
         {
             System.out.println("Error : please insert from (1) to (" + size +")!");
@@ -847,19 +707,20 @@ public class Driver
 
     
 }
-    //Method ! Add a person into the network -> add()
-    
-    //! Select a person by name -> select()
-    
-    //! Display the profile of the selected person -> display()
-    
-    //! Update the profile information of the selected person -> update()
-    
-    //! Delete the selected person -> delete()
-    
-    //! Connect two persons in a meaningful way e.g. friend, parent -> connect()
-    
-    //! Find out whether a person is a direct friend of another person ->
-    
-    //! Find out the name(s) of a person’s child(ren) or the names of the parents
 
+//Limitation
+
+/*
+- A dependent can be a friend ONLY to another dependent 
+    - who is also younger than 16 and from a different family. 
+
+- The age difference between these two young friends 
+cannot be more than 3 years. 
+
+- A person who is 
+2 years old or younger does not have any friends. 
+
+- For example 
+a 4-year-old cannot be friend 
+with a 2-year-old although their age difference is only 2.  
+*/

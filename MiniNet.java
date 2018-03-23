@@ -41,11 +41,11 @@ public class MiniNet
         newDriver.addPeople(people3);
         newDriver.addPeople(people4);
         newDriver.addPeople(people5);
-        Profile profile1 = new Profile("Bryce", "30", "Andrew", "Cassie" , ",Tom,Jerry,", "Image", "working at KFC", "Andy,Bob,Charlie,David");
-        Profile profile2 = new Profile("Emma", "30", "Daniel", "Fiona" , ",Tom,Jerry,", "Image", "student at RMIT", "Andy,Bob,Charlie,David");
+        Profile profile1 = new Profile("Bryce", "30", "Andrew", "Cassie" , ",Tom,Jerry,", "Image", "working at KFC", ",Andy,Bob,Charlie,David,");
+        Profile profile2 = new Profile("Emma", "30", "Daniel", "Fiona" , ",Tom,Jerry,", "Image", "student at RMIT", ",Andy,Bob,Charlie,David,");
         Profile profile3 = new Profile();
         Profile profile4 = new Profile();
-        Profile profile5 = new Profile("Andy", "30", "George", "Holly", "", "Image", "student at RMIT", "Andy,Bob,Charlie,David");
+        Profile profile5 = new Profile("Andy", "30", "George", "Holly", "", "Image", "student at RMIT", ",Andy,Bob,Charlie,David,");
         newDriver.addProfile(profile1);
         newDriver.addProfile(profile2);
         newDriver.addProfile(profile3);
@@ -54,9 +54,6 @@ public class MiniNet
 
         newDriver.start();
     }
-
-
-    //Old code
 
      /**
      * A method to add People to the list
@@ -77,22 +74,7 @@ public class MiniNet
      */
     public void deletePeople(String delPeopleName)
     {        
-        //remove()
-        boolean isDeleted = false;
-        //getNumbersOfPeople()
- /*       for (int i = 0 ; i < 5  ; i++)
-        {
-            if(getPeopleList().get(i).getName().equals(delPeopleName))
-            {
-                System.out.println(getPeopleList().get(i).getName() + " are deleted.");
-                getPeopleList().remove(i);
-                isDeleted = true;
-            }                        
-        }        
- */       if (! isDeleted)
-        {
-            System.out.println(" No matched People are deleted."); 
-        }
+        //Remain Extensibility
     } 
     
     /**
@@ -103,23 +85,7 @@ public class MiniNet
      */
     public void editPeople(String editPeopleName)
     {        
-        //set()
-        boolean isEdited = false;
-        //getNumbersOfPeople()
-        for (int i = 0 ; i < 5  ; i++)
-        {
-/*            if(getPeopleList().get(i).getName().equals(editPeopleName))
-            {
-                System.out.println(getPeopleList().get(i).getName() + " are edited.");
-                getMovieList().get(i).cleanListOfActors();
-               
-                isEdited = true;
-            }                        
-        }        
-        if (! isEdited)
-        {
-            System.out.println(" No matched People are Edited."); 
-*/        }
+        //Remain Extensibility
     }
     
     /**

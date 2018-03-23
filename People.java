@@ -47,7 +47,7 @@ public class People
      */
     public void displayPeopleRecord()
     {
-        //method to test displaying attributes of the movie
+        //method to test displaying attributes of the people
         System.out.print(name + ",");
         System.out.print(age + ",");
         System.out.print(father + ",");
@@ -77,7 +77,7 @@ public class People
      */
     public String getAge()
     {
-        // method to get movie rating
+        // method to get people age
         return age;
     }
             
@@ -137,7 +137,7 @@ public class People
      */
     public void setAge(String peopleAge)
     {
-        //method to set a movie rating
+        //method to set a people age
         age = peopleAge;
     }
     
